@@ -5,7 +5,7 @@ import { NavTypes } from "@/types/nav";
 export const navItems: NavTypes[] = [
   { id: 'home', label: 'Home' },
   { id: 'tanya', label: 'Tanya' },
-  { id: 'lokasi', label: 'Lokasi' },
+  { id: 'location', label: 'Lokasi' },
   { id: 'testimonial', label: 'Testimonial' }
 ]
 

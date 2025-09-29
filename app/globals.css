@@ -3,5 +3,5 @@
 html,
 body {
   font-family: var(--font-poppins), var(--font-montserrat), sans-serif !important;
+  scroll-behavior: smooth;
 }
-

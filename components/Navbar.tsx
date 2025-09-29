@@ -1,13 +1,17 @@
 'use client'
 
 import Logo from '@/assets/logo.svg'
+import { useScrollSpy } from '@/hooks/useScrollSpy'
 import { navItems } from '@/utils/constants'
+import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 
 export default function Navbar() {
-  const [active, setActive] = useState('home')
+  const sectionIds = navItems.map((item) => item.id)
+  const activeId = useScrollSpy(sectionIds)
+
   const [menuOpen, setMenuOpen] = useState(false)
 
   const generateMenu = () => {
@@ -16,8 +20,11 @@ export default function Navbar() {
         key={item.id}
         href={`#${item.id}`}
         className={`transition ${
-          active === item.id
-        } ? "text-green-600 font-semibold" : text-gray-700 hover:text-green-500`}
+          activeId === item.id
+            ? 'text-green-600 font-semibold'
+            : 'text-gray-700 hover:text-green-500'
+        }`}
+        onClick={() => setMenuOpen(false)}
       >
         {item.label}
       </Link>
@@ -36,21 +43,39 @@ export default function Navbar() {
 
         {/* Mobile Hamburger */}
         <button
-          className="md:hidden flex flex-col space-y-1 cursor-pointer"
+          className="md:hidden flex flex-col space-y-1 cursor-pointer relative z-50"
           onClick={() => setMenuOpen((prev) => !prev)}
         >
-          <span className="w-6 h-0.5 bg-gray-700"></span>
-          <span className="w-6 h-0.5 bg-gray-700"></span>
-          <span className="w-6 h-0.5 bg-gray-700"></span>
+          <motion.span
+            className="w-6 h-0.5 bg-gray-700"
+            animate={menuOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
+          />
+          <motion.span
+            className="w-6 h-0.5 bg-gray-700"
+            animate={menuOpen ? { opacity: 0 } : { opacity: 1 }}
+          />
+          <motion.span
+            className="w-6 h-0.5 bg-gray-700"
+            animate={menuOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
+          />
         </button>
       </div>
 
       {/* Mobile Menu */}
-      {menuOpen && (
-        <nav className="absolute top-full left-0 right-0 md:hidden bg-white border-t border-gray-200 shadow-md flex flex-col items-center">
-          {generateMenu()}
-        </nav>
-      )}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.nav
+            key="mobile-menu"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+            className="absolute top-full left-0 right-0 md:hidden bg-white border-t border-gray-200 shadow-md flex flex-col items-center py-4 space-y-4"
+          >
+            {generateMenu()}
+          </motion.nav>
+        )}
+      </AnimatePresence>
     </header>
   )
 }
