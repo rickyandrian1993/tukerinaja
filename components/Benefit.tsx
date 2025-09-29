@@ -1,0 +1,44 @@
+import { benefitItems } from '@/utils/constants'
+import Image from 'next/image'
+
+export default function Benefit() {
+  return (
+    <section className="py-8 md:py-16">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-6 md:mb-12">
+          {/* <span className="bg-[#C8F502] px-2">Benefit</span> */}
+          <div className="flex items-center w-full">
+            <span className="relative font-bold">
+              <span className="bg-lime-300">Benefit</span>
+            </span>
+            <div className="flex-1 h-px bg-gray-400 ml-2"></div>
+          </div>
+        </h2>
+
+        <div className="px-4 sm:px-6 lg:px-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-6">
+          {benefitItems.map((item) => (
+            <div
+              key={item.id}
+              className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group aspect-square md:aspect-5/6"
+            >
+              <Image
+                fill
+                src={item.image}
+                alt={item.title}
+                className="object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#C8F502] via-transparent to-transparent"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-2 z-30">
+                <div className="md:px-2 md:py-2">
+                  <h3 className="text-gray-900 font-bold text-base md:text-2xl leading-tight">
+                    {item.title}
+                  </h3>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
