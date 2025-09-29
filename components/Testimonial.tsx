@@ -53,7 +53,7 @@ export default function Testimonial() {
           />
 
           {/* Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-lime-400/90 to-green-500/80">
+          <div className="absolute inset-0">
             <div className="h-full max-w-7xl mx-auto px-6 md:px-12 py-8 md:py-0 flex flex-col md:flex-row items-start md:items-center">
               {/* Left: heading + text + stats */}
               <div className="w-full md:w-2/3">
