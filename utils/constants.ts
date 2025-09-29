@@ -1,19 +1,12 @@
 import { BenefitTypes } from "@/types/benefit";
+import { LocationTypes } from "@/types/location";
 import { NavTypes } from "@/types/nav";
 
 export const navItems: NavTypes[] = [
-  {
-    id: 'home', label: 'Home'
-  },
-  {
-    id: 'tanya', label: 'Tanya'
-  },
-  {
-    id: 'lokasi', label: 'Lokasi'
-  },
-  {
-    id: 'testimonial', label: 'Testimonial'
-  }
+  { id: 'home', label: 'Home' },
+  { id: 'tanya', label: 'Tanya' },
+  { id: 'lokasi', label: 'Lokasi' },
+  { id: 'testimonial', label: 'Testimonial' }
 ]
 
 export const benefitItems: BenefitTypes[] = [
@@ -47,4 +40,46 @@ export const benefitItems: BenefitTypes[] = [
     title: '100% Aman Bergaransi',
     image: '/images/benefit-6.png'
   },
+]
+
+export const locationItems: LocationTypes[] = [
+  {
+    city: 'Jakarta',
+    branches: [
+      {
+        name: 'Central Park',
+        address:
+          'Ruko Garden Shopping Arcade, B/08/BC, Letjen S. Parman No.Kav. 9, RT.12/RW.6, Kec. Grogol petamburan, Jakarta Barat 11470',
+        phone: '0812-9345-0102',
+      },
+      {
+        name: 'Kelapa Gading',
+        address:
+          'Jl. Boulevard Raya No.28 Blok LB1, RT.12/RW.18, Klp. Gading Tim., Kec. Klp. Gading, Jakarta Utara 14240',
+        phone: '0852-1012-7412',
+      },
+      {
+        name: 'Kemang',
+        address:
+          'Jl. Kemang Raya No.690, RT.7/RW.2, Bangka, Kec. Mampang Prpt., Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12730',
+        phone: '0853-1521-3061',
+      },
+      {
+        name: 'PIK',
+        address:
+          'Ruko crown golf blok A no 31, Jl. Pantai Indah Kapuk No.2, Kamal Muara, Jakarta Utara 14460',
+        phone: '0858-9229-1711',
+      },
+    ],
+  },
+  { city: 'Bekasi' },
+  { city: 'Tangerang' },
+  { city: 'Bogor' },
+  { city: 'Bandung' },
+  { city: 'Surabaya' },
+  { city: 'Malang' },
+  { city: 'Semarang' },
+  { city: 'Yogyakarta' },
+  { city: 'Balikpapan' },
+  { city: 'Medan' },
 ]

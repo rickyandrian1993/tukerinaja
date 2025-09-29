@@ -1,19 +1,12 @@
 import { benefitItems } from '@/utils/constants'
 import Image from 'next/image'
+import TitleContent from './TitleContent'
 
 export default function Benefit() {
   return (
-    <section className="py-8 md:py-16">
+    <section className="px-4 py-8 sm:px-0 md:py-16">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-6 md:mb-12">
-          {/* <span className="bg-[#C8F502] px-2">Benefit</span> */}
-          <div className="flex items-center w-full">
-            <span className="relative font-bold">
-              <span className="bg-lime-300">Benefit</span>
-            </span>
-            <div className="flex-1 h-px bg-gray-400 ml-2"></div>
-          </div>
-        </h2>
+        <TitleContent text="Benefit" />
 
         <div className="px-4 sm:px-6 lg:px-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-6">
           {benefitItems.map((item) => (
@@ -26,6 +19,7 @@ export default function Benefit() {
                 src={item.image}
                 alt={item.title}
                 className="object-cover group-hover:scale-105 transition-transform duration-300"
+                sizes="200"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#C8F502] via-transparent to-transparent"></div>
               <div className="absolute bottom-0 left-0 right-0 p-2 z-30">
