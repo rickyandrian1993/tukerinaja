@@ -33,7 +33,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky border-b border-gray-200 top-0 bg-white z-50">
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-4 md:px-12 py-2">
+      <div className="mx-auto flex justify-between items-center px-4 md:px-12 py-2">
         <Image src={Logo} alt="tukerin-aja" />
 
         {/* Desktop Nav */}

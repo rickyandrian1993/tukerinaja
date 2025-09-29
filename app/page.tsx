@@ -1,8 +1,8 @@
-import Benefit from '@/components/Benefit'
 import Footer from '@/components/Footer'
 import Hero from '@/components/Hero'
 import Location from '@/components/Location'
 import Navbar from '@/components/Navbar'
+import Testimonial from '@/components/Testimonial'
 
 export default function TukerinAja() {
   return (
@@ -11,12 +11,11 @@ export default function TukerinAja() {
       <main className="min-h-screen bg-white md:px-10">
         <Hero />
 
-        <Benefit />
-
         <Location />
+
+        <Testimonial />
       </main>
       <Footer />
     </>
   )
 }
-

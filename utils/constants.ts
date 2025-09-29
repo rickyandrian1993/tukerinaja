@@ -1,6 +1,7 @@
 import { BenefitTypes } from "@/types/benefit";
 import { LocationTypes } from "@/types/location";
 import { NavTypes } from "@/types/nav";
+import { TestimonialTypes } from "@/types/testimonial";
 
 export const navItems: NavTypes[] = [
   { id: 'home', label: 'Home' },
@@ -82,4 +83,32 @@ export const locationItems: LocationTypes[] = [
   { city: 'Yogyakarta' },
   { city: 'Balikpapan' },
   { city: 'Medan' },
+]
+
+export const testimonialItems: TestimonialTypes[] = [
+  {
+    name: "Budi Budiman",
+    text: "Prosesnya Cepet Banget, pelayanannya juga ramah banget",
+    rating: 5,
+  },
+  {
+    name: "Santi",
+    text: "Oke banget sih. Gak nyesel pokoknya jual ipad lama disini. prosesnya cepet. harga juga pas, ga kemurahan. pas banget pokoknya. pas lagi BU juga sih. hehehe..",
+    rating: 5,
+  },
+  {
+    name: "Joko",
+    text: "Mantab banget pokoknya",
+    rating: 5,
+  },
+  {
+    name: "Rina",
+    text: "Super cepat, adminnya juga sabar banget jawab pertanyaan.",
+    rating: 5,
+  },
+  {
+    name: "Dedi",
+    text: "Harga pas, pelayanan mantap, pasti balik lagi.",
+    rating: 5,
+  },
 ]
